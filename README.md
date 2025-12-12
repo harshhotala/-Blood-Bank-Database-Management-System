@@ -46,3 +46,17 @@ Foreign keys maintain referential integrity between donors, patients, hospitals,
 	•	Blood Bank table follows BCNF
 	•	No redundancy
 	•	Functional dependencies explained in docs
+
+🔹 3. Sample Queries You Can Add
+
+You may include SQL queries such as:
+
+-- Find total blood available by group
+SELECT blood_group, SUM(quantity_ml)
+FROM blood
+GROUP BY blood_group;
+
+-- List donors from a specific blood bank
+SELECT donor_name, blood_group, city
+FROM donor
+WHERE blood_bank_id = 'v1';
